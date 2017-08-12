@@ -13,13 +13,13 @@ public class Transaction {
   private String     discountApplied;
   private BigDecimal fundsAfterSale;
   private BigDecimal fundsAfterRefund;
-  private String     paymentMethod;
+  private PaymentMethod  paymentType;
   private BigDecimal endFunds;
 
 
 
   public Transaction(BigDecimal startFunds, String transactionType, BigDecimal salePrice, BigDecimal refundPrice, String discountApplied, 
-   BigDecimal fundsAfterSale, BigDecimal fundsAfterRefund, String paymentMethod, BigDecimal endFunds) {
+   BigDecimal fundsAfterSale, BigDecimal fundsAfterRefund, PaymentMethod paymentType, BigDecimal endFunds) {
     this.startFunds = startFunds;
     this.transactionType = transactionType;
     this.salePrice = salePrice;
@@ -27,7 +27,7 @@ public class Transaction {
     this.discountApplied = discountApplied;
     this.fundsAfterSale = fundsAfterSale;
     this.fundsAfterRefund = fundsAfterRefund;
-    this.paymentMethod = paymentMethod;
+    this.paymentType = paymentType;
     this.endFunds = endFunds;
   }
 
@@ -51,7 +51,6 @@ public class Transaction {
     return this.discountApplied;
   }
 
-  
   public BigDecimal getFundsAfterSale(){
      return this.startFunds.add(salePrice);
   }
@@ -60,10 +59,14 @@ public class Transaction {
      return this.fundsAfterSale.subtract(refundPrice);
   }
 
-
-  public String getPaymentMethod(){
-     return this.paymentMethod;
+  public PaymentMethod getPaymentType() {
+     return this.paymentType;
   }
+
+  public PaymentMethod getPaymentTypeNotNull() {
+     return this.paymentType;
+  }
+
 
   public BigDecimal getEndFunds() {
      return this.endFunds;

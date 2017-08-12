@@ -1,4 +1,4 @@
-package customer;
+package transaction;
 public enum PaymentMethod {
 
 VISA, 

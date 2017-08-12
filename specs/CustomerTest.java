@@ -23,7 +23,7 @@ public class CustomerTest {
       buyPrice = new BigDecimal("5.00");
       refundPrice = new BigDecimal("5.00");
  
-      customer = new Customer("Alex", funds, PaymentMethod.VISA, fundsAfterSale, fundsAfterRefund, buyPrice, refundPrice);
+      customer = new Customer("Alex", funds, FundsMethod.VISA, fundsAfterSale, fundsAfterRefund, buyPrice, refundPrice);
       
    }
 
@@ -41,7 +41,7 @@ public class CustomerTest {
 
     @Test
       public void hasPaymentType() {
-      assertEquals(PaymentMethod.VISA, customer.getPaymentType());
+      assertEquals(FundsMethod.VISA, customer.getPaymentType());
     }
 
     @Test

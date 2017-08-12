@@ -9,7 +9,7 @@ public class Customer  {
 
   private String name;
   private BigDecimal funds;
-  private PaymentMethod  paymentType;
+  private FundsMethod  paymentType;
   private BigDecimal fundsAfterSale;
   private BigDecimal fundsAfterRefund;
   private BigDecimal buyPrice;
@@ -18,7 +18,7 @@ public class Customer  {
 
 
 
-  public Customer(String name, BigDecimal funds, PaymentMethod paymentType, BigDecimal fundsAfterSale, BigDecimal fundsAfterRefund, BigDecimal buyPrice, BigDecimal refundPrice) {
+  public Customer(String name, BigDecimal funds, FundsMethod paymentType, BigDecimal fundsAfterSale, BigDecimal fundsAfterRefund, BigDecimal buyPrice, BigDecimal refundPrice) {
     this.name = name;
     this.funds = funds;
     this.paymentType = paymentType;
@@ -38,10 +38,10 @@ public class Customer  {
     return this.funds;
   }
 
-  public PaymentMethod getPaymentType() {
+  public FundsMethod getPaymentType() {
      return this.paymentType;
   }
-   public PaymentMethod getPaymentTypeNotNull() {
+   public FundsMethod getPaymentTypeNotNull() {
      return this.paymentType;
   }
 

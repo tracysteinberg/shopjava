@@ -28,7 +28,7 @@ public class TransactionTest {
       fundsAfterRefund = new BigDecimal("100.00");
       endFunds = new BigDecimal("100.00");
       transaction = new Transaction(startFunds, "Sale", salePrice, refundPrice, "50%", 
-        fundsAfterSale, fundsAfterRefund, "Credit Card", endFunds);
+      fundsAfterSale, fundsAfterRefund, PaymentMethod.VISA, endFunds);
 
       
    }
@@ -80,8 +80,13 @@ public class TransactionTest {
     }
 
      @Test
-      public void hasPaymentMethod() {
-      assertEquals("Credit Card", transaction.getPaymentMethod());
+      public void hasPaymentType() {
+      assertEquals(PaymentMethod.VISA, transaction.getPaymentType());
+    }
+
+    @Test
+      public void PaymentTypeNotNull() {
+      assertNotNull(transaction.getPaymentTypeNotNull());
     }
 
 
