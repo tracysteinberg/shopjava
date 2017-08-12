@@ -61,8 +61,6 @@ public class Transaction {
   }
 
 
-
-
   public String getPaymentMethod(){
      return this.paymentMethod;
   }
