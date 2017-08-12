@@ -3,7 +3,7 @@ public enum PaymentMethod {
 
 VISA, 
 MASTERCARD,
-STORE,
+STORECARD,
 DEBITCARD,
 CASH,
 GIFTCARD,
