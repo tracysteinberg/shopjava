@@ -51,13 +51,16 @@ public class Transaction {
     return this.discountApplied;
   }
 
+  
   public BigDecimal getFundsAfterSale(){
-    return this.fundsAfterSale;
+     return this.startFunds.add(salePrice);
   }
 
   public BigDecimal getFundsAfterRefund(){
-    return this.fundsAfterRefund;
+     return this.fundsAfterSale.subtract(refundPrice);
   }
+
+
 
 
   public String getPaymentMethod(){
