@@ -69,32 +69,32 @@ public class TransactionTest {
 
     @Test
        public void hasFundsAfterSale(){
-         expected = new BigDecimal("105.00");
-         assertEquals(expected, transaction.getFundsAfterSale());
+       expected = new BigDecimal("105.00");
+       assertEquals(expected, transaction.getFundsAfterSale());
     }
 
     @Test
-        public void hasFundsAfterRefund(){
-        expected = new BigDecimal("100.00");
-        assertEquals(expected, transaction.getFundsAfterRefund());
+       public void hasFundsAfterRefund(){
+       expected = new BigDecimal("100.00");
+       assertEquals(expected, transaction.getFundsAfterRefund());
     }
 
      @Test
-      public void hasPaymentType() {
-      assertEquals(PaymentMethod.VISA, transaction.getPaymentType());
+        public void hasPaymentType() {
+        assertEquals(PaymentMethod.VISA, transaction.getPaymentType());
     }
 
-    @Test
-      public void PaymentTypeNotNull() {
-      assertNotNull(transaction.getPaymentTypeNotNull());
+     @Test
+        public void PaymentTypeNotNull() {
+        assertNotNull(transaction.getPaymentTypeNotNull());
     }
 
 
 
-    @Test
-         public void hasEndFunds(){
-         expected = new BigDecimal("100.00");
-         assertEquals(expected, transaction.getEndFunds());
+     @Test
+        public void hasEndFunds(){
+        expected = new BigDecimal("100.00");
+        assertEquals(expected, transaction.getEndFunds());
     
     }
 

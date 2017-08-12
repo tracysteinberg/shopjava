@@ -41,6 +41,7 @@ public class Customer  {
   public FundsMethod getPaymentType() {
      return this.paymentType;
   }
+  
    public FundsMethod getPaymentTypeNotNull() {
      return this.paymentType;
   }
