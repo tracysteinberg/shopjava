@@ -2,6 +2,10 @@ package store;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.ArrayList;
+import transaction.*;
+import customer.*;
+import store.*;
 
 
 public class Store  {
@@ -10,12 +14,14 @@ public class Store  {
   // private BigDecimal totalRefunds;
   // private PaymentMethods  totalPaymentMethods;
   private ArrayList<Transaction> transactions;
+  private BigDecimal initialBalance;
 
-  public Store() {
+  public Store(BigDecimal initialBalance) {
     // this.incomeReport = incomeReport;
     // this.totalSales = totalSales;
     // this.totalRefunds = totalRefunds;
-    transactions = new ArrayList<Transaction>();
+    this.initialBalance = initialBalance;
+    this.transactions = new ArrayList<Transaction>();
   }
 
   // public BigDecimal getIncomeReport() {
@@ -37,6 +43,27 @@ public class Store  {
 
   public void addTransaction(Transaction t) {
     transactions.add(t);
+    t.getCustomer().spendMoney(t.getAmount());
+  }
+
+   public void subtractTransaction(Transaction t) {
+    transactions.add(t);
+    t.getCustomer().refundMoney(t.getAmount());
+   }
+
+
+
+  public BigDecimal getBalance() {
+    
+    BigDecimal sum = BigDecimal.ZERO;
+
+    for (int i = 0; i < this.transactions.size(); i++) {
+
+     sum = sum.add(this.transactions.get(i).getAmount());
+    }
+     
+    return sum.add(this.initialBalance);
+    
   }
 
   

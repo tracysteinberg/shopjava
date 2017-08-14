@@ -2,6 +2,7 @@ package transaction;
 
 import java.math.BigDecimal;
 import java.util.*;
+import customer.*;
 
 public class Transaction {
 

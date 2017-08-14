@@ -4,13 +4,17 @@ import org.junit.*;
 import customer.*;
 import java.math.BigDecimal;
 import transaction.*;
+import customer.*;
+import store.*;
 
 
 public class TransactionTest {
 
-  Transaction transaction;
+  Transaction transaction1;
+  Transaction transaction2;
   Customer customer1;
-  Store waterstones;
+  Customer customer2;
+  Store graceBros;
   // BigDecimal startFunds;
   // BigDecimal salePrice;
   // BigDecimal refundPrice;
@@ -31,17 +35,36 @@ public class TransactionTest {
       // endFunds = new BigDecimal("100.00");
       // transaction = new Transaction(startFunds, "Sale", salePrice, refundPrice, "50%", 
       // fundsAfterSale, fundsAfterRefund, PaymentMethod.VISA, endFunds);
-      transaction1 = new Transaction(new BigDecimal("10.00"), );
+ 
+      graceBros = new Store(new BigDecimal("200.00"));
       customer1 = new Customer("Alex", new BigDecimal("20.00"), PaymentMethod.VISA);
-      waterstones = new Store();
+      transaction1 = new Transaction(new BigDecimal("10.00"), customer1, PaymentMethod.VISA);
+      customer2 = new Customer("Keith", new BigDecimal("50.00"), PaymentMethod.CHEQUE);
+      transaction2 = new Transaction(new BigDecimal("30.00"), customer2, PaymentMethod.CHEQUE);
    }
 
 
     @Test
     public void hasStartFunds() {
-        waterstones.addTransaction(transaction1);
-        assertEquals(1, getTransactions().size());
+        graceBros.addTransaction(transaction1);
+        graceBros.subtractTransaction(transaction2);
+        assertEquals(2, graceBros.getTransactions().size());
     }
+
+    @Test
+    public void customerLosesFunds() {
+      graceBros.addTransaction(transaction1);
+      BigDecimal expected = new BigDecimal("10.00");
+      assertEquals(expected, customer1.getFunds());
+    }
+     @Test
+     public void customerGainsFunds() {
+      graceBros.subtractTransaction(transaction2);
+      BigDecimal expected = new BigDecimal("80.00");
+      assertEquals(expected, customer2.getFunds());
+    }
+  
+
 
 
     // @Test

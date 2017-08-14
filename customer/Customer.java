@@ -2,6 +2,7 @@ package customer;
 
 import java.math.BigDecimal;
 import java.util.*;
+import transaction.*;
 
 
 public class Customer  {
@@ -28,7 +29,16 @@ public class Customer  {
   }
 
   public PaymentMethod getPaymentType() {
-     return this.paymentMethod;
+    return this.preferredPaymentMethod;
+  }
+
+  public void spendMoney(BigDecimal amount){
+   this.funds = this.funds.subtract(amount);
+  }
+
+
+  public void refundMoney(BigDecimal amount){
+   this.funds = this.funds.add(amount);
   }
 
 

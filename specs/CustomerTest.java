@@ -1,69 +1,44 @@
-
 import static org.junit.Assert.*;
 import org.junit.*;
 import customer.*;
+import transaction.*;
+import store.*;
 import java.math.BigDecimal;
 
 public class CustomerTest {
 
-  Customer customer;
+  Customer customer1;
+  Customer customer2;
   BigDecimal funds;
-  BigDecimal fundsAfterSale;
-  BigDecimal fundsAfterRefund;
-  BigDecimal buyPrice;
-  BigDecimal refundPrice;
   BigDecimal expected;
 
   
     @Before 
       public void before() {
       funds = new BigDecimal("20.00");
-      fundsAfterSale = new BigDecimal("15.00");
-      fundsAfterRefund = new BigDecimal("20.00");
-      buyPrice = new BigDecimal("5.00");
-      refundPrice = new BigDecimal("5.00");
- 
-      customer = new Customer("Alex", funds, FundsMethod.VISA, fundsAfterSale, fundsAfterRefund, buyPrice, refundPrice);
       
-   }
-
+      customer1 = new Customer("Alex", new BigDecimal("20.00"), PaymentMethod.VISA);
+      customer2 = new Customer("Keith", new BigDecimal("50"), PaymentMethod.CHEQUE);
+      }
+      
     @Test
       public void hasName() {
-      assertEquals("Alex", customer.getName());
+      assertEquals("Alex", customer1.getName());
     }
 
 
     @Test
        public void hasFunds() {
        expected = new BigDecimal("20.00"); 
-       assertEquals(expected, customer.getFunds());
+       assertEquals(expected, customer1.getFunds());
     }
 
     @Test
       public void hasPaymentType() {
-      assertEquals(FundsMethod.VISA, customer.getPaymentType());
+      assertEquals(PaymentMethod.VISA, customer1.getPaymentType());
     }
 
-    @Test
-      public void PaymentTypeNotNull() {
-      assertNotNull(customer.getPaymentTypeNotNull());
-    }
-
-
-//    Customer Funds go down and up
-
-    @Test
-       public void hasFundsAfterSale(){
-         expected = new BigDecimal("15.00");
-         assertEquals(expected, customer.getFundsAfterSale());
-    }
-
-    @Test
-        public void hasFundsAfterRefund(){
-        expected = new BigDecimal("20.00");
-        assertEquals(expected, customer.getFundsAfterRefund());
-    }
-
+    
 
 
 
