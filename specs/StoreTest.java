@@ -16,7 +16,7 @@ public class StoreTest {
 
   
     @Before 
-      public void before() {
+    public void before() {
       incomeReport = new BigDecimal("2000.00");
       totalSales = new BigDecimal("1500.00");
       totalRefunds = new BigDecimal("500.00");
@@ -25,25 +25,28 @@ public class StoreTest {
       
     }
     
-
     @Test
-       public void hasIncomeReport() {
+    public void hasIncomeReport() {
        expected = new BigDecimal("2000.00"); 
        assertEquals(expected, store.getIncomeReport());
     }
 
     @Test
-       public void hasTotalSales() {
+    public void hasTotalSales() {
        expected = new BigDecimal("1500.00"); 
        assertEquals(expected, store.getTotalSales());
     }
 
-     @Test
-       public void hasTotalRefunds() {
+    @Test
+    public void hasTotalRefunds() {
        expected = new BigDecimal("500.00"); 
        assertEquals(expected, store.getTotalRefunds());
     }
 
+    @Test
+    public void storeCanMakeSale() {
+
+    }
 
 
 
