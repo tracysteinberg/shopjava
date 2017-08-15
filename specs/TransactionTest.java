@@ -24,7 +24,7 @@ public class TransactionTest {
 
   
       myWallet = new HashMap<PaymentMethod, BigDecimal>();
-      myWallet.put(PaymentMethod.VISA, new BigDecimal("2000"));
+      myWallet.put(PaymentMethod.VISA, new BigDecimal("10000"));
       myWallet.put(PaymentMethod.CHEQUE, new BigDecimal("1000"));
 
 
@@ -45,13 +45,7 @@ public class TransactionTest {
         assertEquals(2, graceBros.getTransactions().size());
     }
   
-     
-    // @Test
-    //   public void hasDiscountApplied() { 
-    //   assertEquals("50%", transaction.getDiscountApplied());
-    // }
-
-
+   
 
 
 

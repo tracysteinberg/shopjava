@@ -20,7 +20,7 @@ public class StoreTest {
     public void before() { 
 
       myWallet = new HashMap<PaymentMethod, BigDecimal>();
-      myWallet.put(PaymentMethod.VISA, new BigDecimal("2000"));
+      myWallet.put(PaymentMethod.VISA, new BigDecimal("10000"));
       myWallet.put(PaymentMethod.CHEQUE, new BigDecimal("1000"));
 
       graceBros = new Store(new BigDecimal("200.00"));
