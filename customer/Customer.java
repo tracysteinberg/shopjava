@@ -11,12 +11,14 @@ public class Customer  {
   private String name;
   private BigDecimal funds;
   private PaymentMethod preferredPaymentMethod;
+  private HashMap<PaymentMethod, BigDecimal> myWallet;
 
 
-  public Customer(String name, BigDecimal funds, PaymentMethod paymentMethod) {
+  public Customer(String name, HashMap<PaymentMethod, BigDecimal> myWallet) {
     this.name = name;
-    this.funds = funds;
-    this.preferredPaymentMethod = paymentMethod;
+    this.myWallet = myWallet;
+    
+  
   }
 
 
@@ -24,34 +26,29 @@ public class Customer  {
     return this.name;
   }
 
-  public BigDecimal getFunds() {
-    return this.funds;
+  public HashMap<PaymentMethod, BigDecimal> getFunds() {
+    return this.myWallet;
   }
 
   public PaymentMethod getPaymentType() {
     return this.preferredPaymentMethod;
   }
 
-  public void spendMoney(BigDecimal amount){
-   this.funds = this.funds.subtract(amount);
+  public void spendMoney(BigDecimal amount, PaymentMethod method) {
+    BigDecimal currentBalance = this.myWallet.get(method);
+    BigDecimal newBalance = currentBalance.subtract(amount);
+    this.myWallet.put(method, newBalance);
+      
+  }
+
+   public void refundMoney(BigDecimal amount, PaymentMethod method) {
+     BigDecimal currentBalance = this.myWallet.get(method);
+     BigDecimal newBalance = currentBalance.add(amount);
+     this.myWallet.put(method, newBalance);
+      
   }
 
 
-  public void refundMoney(BigDecimal amount){
-   this.funds = this.funds.add(amount);
-  }
-
-
-//  Customer funds go down/up
-
-
-  // public BigDecimal getFundsAfterSale(){
-  //    return this.funds.subtract(buyPrice);
-  // }
-
-  // public BigDecimal getFundsAfterRefund(){
-  //    return this.fundsAfterSale.add(refundPrice);
-  // }
 
   
 }

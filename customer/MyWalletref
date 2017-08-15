@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+
+
+public class Fund {
+
+
+        private HashMap<Fund> list;
+
+        public Fund1() {
+            list = new HashMap<Fund>,BigDecimal;
+            list.add(new Fund("VISA", BigDecimal("5000"));
+            list.add(new Fund("MasterCard", BigDecimal("1000"));
+            list.add(new Fund("StoreCard", BigDecimal("0"));
+            list.add(new Fund("DebitCard", BigDecimal("1500"));
+            list.add(new Fund("Cash", BigDecimal("500"));
+            list.add(new Fund("GiftCard", BigDecimal("20"));
+            list.add(new Funds("Cheque"), BigDecimal("1000");
+            
+
+        }
+
+        public ArrayList<Fund> getList() {
+            return new ArrayList<Fund>(list);
+        }
+
+    }

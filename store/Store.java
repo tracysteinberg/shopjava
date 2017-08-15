@@ -41,30 +41,39 @@ public class Store  {
     return this.transactions;
   }
 
+//   total sales
+
   public void addTransaction(Transaction t) {
     transactions.add(t);
-    t.getCustomer().spendMoney(t.getAmount());
+    t.getCustomer().spendMoney(t.getAmount(), t.getPaymentMethod());
   }
+
+
+
+//   total refunds
 
    public void subtractTransaction(Transaction t) {
     transactions.add(t);
-    t.getCustomer().refundMoney(t.getAmount());
+    t.getCustomer().refundMoney(t.getAmount(), t.getPaymentMethod());
    }
 
 
+
+//  sum = balance 
 
   public BigDecimal getBalance() {
     
     BigDecimal sum = BigDecimal.ZERO;
 
     for (int i = 0; i < this.transactions.size(); i++) {
-
-     sum = sum.add(this.transactions.get(i).getAmount());
+      sum = sum.add(this.transactions.get(i).getAmount());
     }
      
     return sum.add(this.initialBalance);
     
   }
+
+   
 
   
 }

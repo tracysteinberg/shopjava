@@ -1,63 +1,32 @@
+
 package transaction;
+import java.util.EnumSet;
+import java.util.*;
 
 public enum PaymentMethod {
-	VISA, 
-	MASTERCARD,
-	STORECARD,
-	DEBITCARD,
-	CASH,
-	GIFTCARD,
-	CHEQUE;
 
-// public String toString() {
-//    switch(this) {
-
-//     case VISA: return "Visa";
-   
-//    } 
-
-//     return "It's the default";          
-
-//  }
-
-}
+	VISA("Credit"), 
+	MASTERCARD("Credit"),
+	STORECARD("Credit"),
+	DEBITCARD("Cash"),
+	CASH("Cash"),
+	GIFTCARD("Cash"),
+	CHEQUE("Cash");
 
 
-// package transaction;
-// import java.util.stream;
-// public enum PaymentMethod {
-
-// VISA("Credit"), 
-// MASTERCARD("Credit"),
-// STORECARD("Credit"),
-// DEBITCARD("Cash"),
-// CASH("Cash"),
-// GIFTCARD("Cash"),
-// CHEQUE("Cash");
-
-// public String toString() {
-//    switch(this) {
-
-//     case VISA: 
-   
-//    } 
-
-//  EnumSet.allOf(PaymentMethod.class)
-//   .forEach(type -> System.out.println(type));
-
-//   Stream.of(PaymentMethod.values());
-
-//   private String typeOfTransaction;
+     private String typeOfPayment;
  
-//     PaymentMethod (String typeOfTransaction) {
-//         this.typeOfTransaction = typeOfTransaction;
-//     }
+     PaymentMethod(String typeOfPayment) {
+     this.typeOfPayment = typeOfPayment;
 
 
-//    // return "It's the default";          
+    }
 
-//  }
 
-// }
+   }
+       
+
+
+
 
   
