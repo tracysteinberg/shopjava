@@ -24,8 +24,8 @@ public class TransactionTest {
 
   
       myWallet = new HashMap<PaymentMethod, BigDecimal>();
-      myWallet.put(PaymentMethod.VISA, new BigDecimal("10000"));
-      myWallet.put(PaymentMethod.CHEQUE, new BigDecimal("1000"));
+      myWallet.put(PaymentMethod.VISA, new BigDecimal("10000.00"));
+      myWallet.put(PaymentMethod.CHEQUE, new BigDecimal("1000.00"));
 
 
       customer1 = new Customer("Alex", myWallet);

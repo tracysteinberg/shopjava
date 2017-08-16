@@ -17,7 +17,6 @@ public class CustomerTest {
   
     @Before 
       public void before() {
-      // funds = new BigDecimal("20.00");
       myWallet = new HashMap<PaymentMethod, BigDecimal>();
       myWallet.put(PaymentMethod.CHEQUE, new BigDecimal("1000.00"));
       myWallet.put(PaymentMethod.VISA, new BigDecimal("10000.00"));

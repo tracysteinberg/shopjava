@@ -10,32 +10,16 @@ import store.*;
 
 public class Store  {
 
-  // private BigDecimal totalSales;
-  // private BigDecimal totalRefunds;
-  // private PaymentMethods  totalPaymentMethods;
+  
   private ArrayList<Transaction> transactions;
   private BigDecimal initialBalance;
 
   public Store(BigDecimal initialBalance) {
-    // this.incomeReport = incomeReport;
-    // this.totalSales = totalSales;
-    // this.totalRefunds = totalRefunds;
     this.initialBalance = initialBalance;
     this.transactions = new ArrayList<Transaction>();
   }
 
-  // public BigDecimal getIncomeReport() {
-  //   return this.incomeReport;
-  // }
-
-
-  // public BigDecimal getTotalSales(){
-  //    return this.incomeReport.subtract(totalRefunds);
-  // }
-
-  // public BigDecimal getTotalRefunds(){
-  //    return this.incomeReport.subtract(totalSales);
-  // }
+  
 
   public ArrayList<Transaction> getTransactions(){
     return this.transactions;
@@ -44,8 +28,10 @@ public class Store  {
 //   total sales
 
   public void addTransaction(Transaction t) {
+  
     transactions.add(t);
     t.getCustomer().spendMoney(t.getAmount(), t.getPaymentMethod());
+
   }
 
 
@@ -55,6 +41,7 @@ public class Store  {
    public void subtractTransaction(Transaction t) {
     transactions.add(t);
     t.getCustomer().refundMoney(t.getAmount(), t.getPaymentMethod());
+
    }
 
 
@@ -70,7 +57,7 @@ public class Store  {
     }
      
     return sum.add(this.initialBalance);
-    
+
   }
 
    
