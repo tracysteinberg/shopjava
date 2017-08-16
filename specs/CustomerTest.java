@@ -33,7 +33,6 @@ public class CustomerTest {
     }
 
 
-
    @Test
       public void hasFunds() {
       BigDecimal expected = new BigDecimal("1000.00");

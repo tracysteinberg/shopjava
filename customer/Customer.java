@@ -18,7 +18,6 @@ public class Customer  {
     this.name = name;
     this.myWallet = myWallet;
     
-  
   }
 
 
