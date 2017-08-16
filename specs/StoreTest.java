@@ -9,15 +9,15 @@ import java.util.HashMap;
 
 public class StoreTest {
 
-    Store graceBros;
-    Transaction transaction1;
-    Transaction transaction2;
-    Customer customer1;
-    Customer customer2;
-    HashMap<PaymentMethod, BigDecimal>  myWallet;
+   Store graceBros;
+   Transaction transaction1;
+   Transaction transaction2;
+   Customer customer1;
+   Customer customer2;
+   HashMap<PaymentMethod, BigDecimal>  myWallet;
   
-    @Before 
-    public void before() { 
+   @Before 
+      public void before() { 
 
       myWallet = new HashMap<PaymentMethod, BigDecimal>();
       myWallet.put(PaymentMethod.VISA, new BigDecimal("10000.00"));
@@ -33,21 +33,20 @@ public class StoreTest {
 
 
     @Test
-    public void storeCanMakeSale() {
-         graceBros.addTransaction(transaction1);
-         BigDecimal expected = new BigDecimal("250.00");
-         assertEquals(expected, graceBros.getBalance());
+       public void storeCanMakeSale() {
+       graceBros.addTransaction(transaction1);
+       BigDecimal expected = new BigDecimal("250.00");
+       assertEquals(expected, graceBros.getBalance());
       } 
 
 
     @Test
-    public void storeCanReturn() {
+       public void storeCanReturn() {
        graceBros.addTransaction(transaction1);
        graceBros.subtractTransaction(transaction2);
        BigDecimal expected = new BigDecimal("190.00");
        assertEquals(expected, graceBros.getBalance());
     }
-
 
 
 } 

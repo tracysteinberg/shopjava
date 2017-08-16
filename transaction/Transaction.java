@@ -18,15 +18,15 @@ public class Transaction {
     this.paymentMethod = pm;
   }
 
-  public BigDecimal getAmount() {
-    return this.amount;
+   public BigDecimal getAmount() {
+     return this.amount;
   }
 
-  public Customer getCustomer() {
-    return this.customer;
+   public Customer getCustomer() {
+     return this.customer;
   }
 
-  public PaymentMethod getPaymentMethod() {
+   public PaymentMethod getPaymentMethod() {
     return this.paymentMethod;
   }
 
