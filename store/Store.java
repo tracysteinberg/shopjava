@@ -38,7 +38,7 @@ public class Store  {
 
 //   refunds
 
-   public void subtractTransaction(Transaction t) {
+  public void subtractTransaction(Transaction t) {
     transactions.add(t);
     t.getCustomer().refundMoney(t.getAmount(), t.getPaymentMethod());
 
@@ -59,8 +59,7 @@ public class Store  {
     return sum.add(this.initialBalance);
 
   }
-
-   
+ 
 
   
 }

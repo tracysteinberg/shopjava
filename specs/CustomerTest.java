@@ -51,11 +51,11 @@ public class CustomerTest {
 
 
     @Test
-        public void canAddToPaymentMethod() {
-        BigDecimal expected = new BigDecimal("10060.00");
-        BigDecimal refundMoney = new BigDecimal("60.00");
-        customer2.refundMoney(refundMoney, PaymentMethod.VISA);
-        assertEquals(expected, customer2.getFunds().get(PaymentMethod.VISA));
+       public void canAddToPaymentMethod() {
+       BigDecimal expected = new BigDecimal("10060.00");
+       BigDecimal refundMoney = new BigDecimal("60.00");
+       customer2.refundMoney(refundMoney, PaymentMethod.VISA);
+       assertEquals(expected, customer2.getFunds().get(PaymentMethod.VISA));
     }
 
 
