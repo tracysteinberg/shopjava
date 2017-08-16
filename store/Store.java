@@ -25,7 +25,7 @@ public class Store  {
     return this.transactions;
   }
 
-//   total sales
+//   sales
 
   public void addTransaction(Transaction t) {
   
@@ -36,7 +36,7 @@ public class Store  {
 
 
 
-//   total refunds
+//   refunds
 
    public void subtractTransaction(Transaction t) {
     transactions.add(t);
