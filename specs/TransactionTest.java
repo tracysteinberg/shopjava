@@ -32,7 +32,7 @@ public class TransactionTest {
 
        graceBros = new Store(new BigDecimal("200.00"));
        transaction1 = new Transaction(new BigDecimal("50.00"),  PaymentMethod.CHEQUE, customer1);
-       transaction2 = new Transaction(new BigDecimal("50.00"),  PaymentMethod.VISA, customer2);
+       transaction2 = new Transaction(new BigDecimal("60.00"),  PaymentMethod.VISA, customer2);
    }
 
 
