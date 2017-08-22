@@ -37,7 +37,7 @@ public class TransactionTest {
 
 
     @Test
-      public void hasStartFunds() {
+      public void hasTransactions() {
         graceBros.addTransaction(transaction1);
         graceBros.subtractTransaction(transaction2);
         assertEquals(2, graceBros.getTransactions().size());
